@@ -5,7 +5,8 @@ from velocityai.agents.writer import WriterAgent
 
 async def main():
     # Initialize LLM
-    llm = GeminiLLM(api_key="AIzaSyBM6LRq0J-CorEjN-cY65P0RHpiGkrtRHE")
+    import os
+    llm = GeminiLLM(api_key=os.getenv("GEMINI_API_KEY"))
     
     # Create agents
     researcher = ResearchAgent(llm)
